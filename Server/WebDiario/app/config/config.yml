@@ -77,3 +77,6 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# ApiDoc Bundle
+nelmio_api_doc: ~

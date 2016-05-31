@@ -1,4 +1,13 @@
 services:
-#    api.example:
-#        class: WebDiario\ApiBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+
+    ## Listeners
+    kernel.listner.kernel_exception:
+      class: WebDiario\ApiBundle\Listener\ExceptionListener
+      tags:
+        - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+
+    ## Controllers
+    api.controller.login:
+      class: WebDiario\ApiBundle\Controller\LoginController
+      calls:
+        - [setAuthenticationService, [@domain.authentication]]
