@@ -17,3 +17,7 @@ parameters:
 
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    #Api Tokens Conf
+    token_length: 16 #bits
+    token_expire_time: 1 #hour

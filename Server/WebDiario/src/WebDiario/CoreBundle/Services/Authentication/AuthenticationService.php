@@ -3,9 +3,11 @@ namespace WebDiario\CoreBundle\Services\Authentication;
 
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\Request;
+use WebDiario\ApiBundle\ApiBundle;
 use WebDiario\ApiBundle\Helpers\ApiProblem;
 use WebDiario\ApiBundle\Helpers\ApiProblemException;
 use WebDiario\ApiBundle\Helpers\ApiResponse;
+use WebDiario\CoreBundle\Entity\Tokens;
 use WebDiario\CoreBundle\Services\Aware\EntityManagerAware;
 
 class AuthenticationService
@@ -16,16 +18,18 @@ class AuthenticationService
     public function receivedCredentialsAction(Request $request)
     {
         $information = $this->decodeRequest($request);
-        if((!isset($information['email'])) || (!isset($information['password'])))
+        if((!isset($information['registry'])) || (!isset($information['password'])) || (!isset($information['login_type'])))
         {
             $apiProblem = ApiProblem::createApiProblemByCode(ApiProblem::TYPE_VALIDATION_ERROR);
-            $apiProblem->set("message","O JSON recebido nao possui os campos 'email' e/ou 'password'");
+            $apiProblem->set("message","O JSON recebido nao possui os campos 'registry' e/ou 'password' e/ou 'login_type");
             throw new ApiProblemException($apiProblem);
         }
-        $email = $information['email'];
+        $email = $information['registry'];
         $password = $information['password'];
-        $account = $this->checkEmailAndPassword($email,$password);
-        if(get_class($account) === "Wideti\\DomainBundle\\Entity\\Account")
+        $login_type = $information['login_type'];
+        $account = $this->checkEmailAndPassword($email,$password, $login_type);
+        if(get_class($account) === "WebDiario\\CoreBundle\\Entity\\Professors" ||
+            get_class($account) === "WebDiario\\CoreBundle\\Entity\\Students")
         {
             if($account)
             {
@@ -58,7 +62,7 @@ class AuthenticationService
             $apiProblem->set('message',"Para consumir este recurso o usuario precisa estar autenticado!");
             throw new ApiProblemException($apiProblem);
         }
-        $token = $this->em->getRepository('DomainBundle:Tokens')
+        $token = $this->em->getRepository('CoreBundle:Tokens')
             ->findOneBy(
                 array(
                     'token' => $auth
@@ -102,40 +106,94 @@ class AuthenticationService
         return json_decode($request->getContent(),true);
     }
 
-    private function checkEmailAndPassword($email, $password)
+    private function checkEmailAndPassword($email, $password, $login_type)
     {
-        $account = $this->em->getRepository('DomainBundle:Account')
-            ->findOneBy([
-                'email' => $email,
-                'password' => $password
-            ]);
-        if(!$account)
+        if($login_type === "professor")
         {
-            throw new ApiProblemException(ApiProblem::createApiProblemByCode(ApiProblem::TYPE_BAD_CREDENTIALS));
+            $account = $this->em->getRepository('CoreBundle:Professors')
+                ->findOneBy([
+                    'registry' => $email,
+                    'password' => md5($password)
+                ]);
+            if(!$account)
+            {
+                throw new ApiProblemException(ApiProblem::createApiProblemByCode(ApiProblem::TYPE_BAD_CREDENTIALS));
+            }
+            if($account->getEnabled() == false)
+            {
+                $apiProblem = ApiProblem::createApiProblemByCode(ApiProblem::TYPE_UNAUTHORIZED);
+                $apiProblem->set('message',"O usuario '".$account->getName()."' encontra-se desativado!");
+                throw new ApiProblemException($apiProblem);
+            }
+            $token = $this->em->getRepository('CoreBundle:Tokens')
+                ->findOneBy([
+                    'professor' => $account,
+                ]);
+            if(!$token)
+            {
+                return $account;
+            }
+            $dateTime = new \DateTime("now");
+            if($token->getExpire() > $dateTime)
+            {
+                $apiResponse = ApiResponse::createApiResponseByCode(ApiResponse::HTTP_CREATED);
+                $apiResponse->set('token', $token->getToken());
+                $apiResponse->setMessage("Autenticacao realizada com sucesso!");
+                return $apiResponse->getResponse();
+            }
+            else
+            {
+                $this->em->remove($token);
+                $this->em->flush();
+                return $account;
+            }
         }
-        $token = $this->em->getRepository('DomainBundle:Tokens')
-            ->findOneBy([
-                'account' => $account,
-            ]);
-        if(!$token)
+        else if($login_type === "student")
         {
-            return $account;
-        }
-        $dateTime = new \DateTime("now");
-        if($token->getExpire() > $dateTime)
-        {
-            $apiResponse = ApiResponse::createApiResponseByCode(ApiResponse::HTTP_CREATED);
-            $apiResponse->set('token', $token->getToken());
-            $apiResponse->setMessage("Autenticacao realizada com sucesso!");
-            return $apiResponse->getResponse();
+            $account = $this->em->getRepository('CoreBundle:Students')
+                ->findOneBy([
+                    'registry' => $email,
+                    'password' => md5($password)
+                ]);
+            if(!$account)
+            {
+                throw new ApiProblemException(ApiProblem::createApiProblemByCode(ApiProblem::TYPE_BAD_CREDENTIALS));
+            }
+            if($account->getEnabled() == false)
+            {
+                $apiProblem = ApiProblem::createApiProblemByCode(ApiProblem::TYPE_UNAUTHORIZED);
+                $apiProblem->set('message',"O usuario '".$account->getName()."' encontra-se desativado!");
+                throw new ApiProblemException($apiProblem);
+            }
+            $token = $this->em->getRepository('CoreBundle:Tokens')
+                ->findOneBy([
+                    'student' => $account,
+                ]);
+            if(!$token)
+            {
+                return $account;
+            }
+            $dateTime = new \DateTime("now");
+            if($token->getExpire() > $dateTime)
+            {
+                $apiResponse = ApiResponse::createApiResponseByCode(ApiResponse::HTTP_CREATED);
+                $apiResponse->set('token', $token->getToken());
+                $apiResponse->setMessage("Autenticacao realizada com sucesso!");
+                return $apiResponse->getResponse();
+            }
+            else
+            {
+                $this->em->remove($token);
+                $this->em->flush();
+                return $account;
+            }
         }
         else
         {
-            $this->em->remove($token);
-            $this->em->flush();
-            return $account;
+            $apiProblem = ApiProblem::createApiProblemByCode(ApiProblem::TYPE_INVALID_REQUEST_BODY_FORMAT);
+            $apiProblem->set('message', "O corpo da requisicao nao contem o tipo de autenticacao!");
+            throw new ApiProblemException($apiProblem);
         }
-
     }
 
     private function generateToken()
@@ -145,17 +203,38 @@ class AuthenticationService
         return $token;
     }
 
-    private function saveTokenAndActiveThen($token, Account $account)
+    private function saveTokenAndActiveThen($token, $account)
     {
         $Token = new Tokens();
-        $Token->setAccount($account);
-        $Token->setToken($token);
-        $Token->setExpire(new \DateTime(
-            "+ ".$this->container->getParameter('token_expire_time')." hours"
-        ));
-        $Token->setCreated();
-        $this->em->persist($Token);
-        $this->em->flush();
+
+        if(get_class($account) === "WebDiario\\CoreBundle\\Entity\\Professors")
+        {
+            $Token->setProfessor($account);
+            $Token->setToken($token);
+            $Token->setExpire(new \DateTime(
+                "+ ".$this->container->getParameter('token_expire_time')." hours"
+            ));
+            $Token->setCreated();
+            $this->em->persist($Token);
+            $this->em->flush();
+        }
+        else if(get_class($account) === "WebDiario\\CoreBundle\\Entity\\Students")
+        {
+            $Token->setStudent($account);
+            $Token->setToken($token);
+            $Token->setExpire(new \DateTime(
+                "+ ".$this->container->getParameter('token_expire_time')." hours"
+            ));
+            $Token->setCreated();
+            $this->em->persist($Token);
+            $this->em->flush();
+        }
+        else
+        {
+            $apiProblem = ApiProblem::createApiProblemByCode(ApiProblem::TYPE_INTERNAL_SERVER_ERROR);
+            $apiProblem->set('message',"Erro ao identificar conta de usuario, nao foi possivel gerar o token");
+            throw new ApiProblemException($apiProblem);
+        }
     }
 
 }

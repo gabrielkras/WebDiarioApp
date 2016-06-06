@@ -7,4 +7,4 @@ api_login:
 api_logout:
     path:     /logout
     defaults: { _controller: api.controller.login:logoutAction }
-    methods: [GET]
+    methods: [POST]
