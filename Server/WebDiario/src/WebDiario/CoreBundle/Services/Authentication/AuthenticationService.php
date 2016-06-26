@@ -3,7 +3,6 @@ namespace WebDiario\CoreBundle\Services\Authentication;
 
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\Request;
-use WebDiario\ApiBundle\ApiBundle;
 use WebDiario\ApiBundle\Helpers\ApiProblem;
 use WebDiario\ApiBundle\Helpers\ApiProblemException;
 use WebDiario\ApiBundle\Helpers\ApiResponse;

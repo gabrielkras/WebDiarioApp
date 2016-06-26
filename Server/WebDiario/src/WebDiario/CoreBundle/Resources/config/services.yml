@@ -1,6 +1,11 @@
 services:
-     domain.authentication:
-        class: WebDiario\CoreBundle\Services\Authentication\AuthenticationService
-        calls:
-          - [ setEntityManager, [@doctrine.orm.entity_manager]]
-          - [ setContainer, [@service_container]]
+  domain.authentication:
+    class: WebDiario\CoreBundle\Services\Authentication\AuthenticationService
+    calls:
+      - [ setEntityManager, [@doctrine.orm.entity_manager]]
+      - [ setContainer, [@service_container]]
+
+  domain.students:
+    class: WebDiario\CoreBundle\Services\Students\StudentService
+    calls:
+      - [ setEntityManager, [@doctrine.orm.entity_manager]]
