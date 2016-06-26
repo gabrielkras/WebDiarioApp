@@ -4,18 +4,16 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewNomeMateria"
+        android:id="@+id/textViewNomeProfessor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textViewSiglaMateria"
+        android:id="@+id/textViewProntuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewNomeMateria"
+        android:layout_below="@id/textViewNomeProfessor"
         android:text="New Text" />
-
-
 </RelativeLayout>
