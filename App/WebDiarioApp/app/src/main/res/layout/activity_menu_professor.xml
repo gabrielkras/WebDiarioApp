@@ -38,6 +38,7 @@
             android:layout_row="0"
             android:background="@null"
             android:contentDescription="@string/contentDescriptionChamada"
+            android:onClick="fazerChamada"
             android:src="@drawable/chamada" />
 
 
@@ -50,6 +51,7 @@
             android:layout_row="1"
             android:background="@null"
             android:contentDescription="@string/contentDescriptionAlunos"
+            android:onClick="exibirAlunos"
             android:src="@drawable/alunos" />
 
         <ImageButton
@@ -61,6 +63,7 @@
             android:layout_row="1"
             android:background="@null"
             android:contentDescription="@string/contentDescriptionLogoff"
+            android:onClick="sairMenu"
             android:src="@drawable/sair" />
     </GridLayout>
 </RelativeLayout>

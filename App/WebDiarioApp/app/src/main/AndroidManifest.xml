@@ -17,7 +17,9 @@
         </activity>
         <activity android:name=".MenuProfessorActivity" />
         <activity android:name=".ListaMateriasActivity" />
-        <activity android:name=".MenuAlunoActivity"></activity>
+        <activity android:name=".MenuAlunoActivity" />
+        <activity android:name=".ChamadaActivity" />
+        <activity android:name=".ListaAlunosActivity"></activity>
     </application>
 
 </manifest>

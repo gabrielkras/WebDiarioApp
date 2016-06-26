@@ -7,6 +7,8 @@ import android.view.View;
 
 public class MenuProfessorActivity extends AppCompatActivity {
 
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -14,7 +16,21 @@ public class MenuProfessorActivity extends AppCompatActivity {
     }
 
     public void exibirMaterias(View view) {
-        Intent carregarListaMaterias = new Intent(this, ListaMateriasActivity.class);
-        startActivity(carregarListaMaterias);
+        intent = new Intent(this, ListaMateriasActivity.class);
+        startActivity(intent);
+    }
+
+    public void fazerChamada(View view) {
+        intent = new Intent(this, ChamadaActivity.class);
+        startActivity(intent);
+    }
+
+    public void exibirAlunos(View view) {
+        intent = new Intent(this, ListaAlunosActivity.class);
+        startActivity(intent);
+    }
+
+    public void sairMenu(View view) {
+        finish();
     }
 }
