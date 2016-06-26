@@ -50,19 +50,6 @@ class Classroom
     private $professor;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Students")
-     * @ORM\JoinTable(name="classroom_students",
-     *     joinColumns={
-     *          @ORM\JoinColumn(name="student_id", referencedColumnName="id")
-     *     },
-     *     inverseJoinColumns={
-     *          @ORM\JoinColumn(name="classroom_id", referencedColumnName="id")
-     *     },
-     * )
-     */
-    private $students;
-
-    /**
      * @ORM\Column(name="enabled", type="boolean")
      */
     private $enabled;
@@ -153,14 +140,6 @@ class Classroom
     public function setProfessor($professor)
     {
         $this->professor = $professor;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStudents()
-    {
-        return $this->students;
     }
 
     /**

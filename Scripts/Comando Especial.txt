@@ -1,0 +1,3 @@
+Comando Especial Para Ignorar Chaves Estrangeisras 
+ 
+ SET foreign_key_checks = 0;
