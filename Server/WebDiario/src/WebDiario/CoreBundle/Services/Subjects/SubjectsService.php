@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use WebDiario\ApiBundle\Helpers\ApiProblem;
 use WebDiario\ApiBundle\Helpers\ApiProblemException;
 use WebDiario\ApiBundle\Helpers\ApiResponse;
-use WebDiario\CoreBundle\Entity\ClassroomStudents;
+use WebDiario\CoreBundle\Services\Aware\AuthenticationServiceAware;
 use WebDiario\CoreBundle\Services\Aware\EntityManagerAware;
 
 /**
@@ -16,8 +16,9 @@ use WebDiario\CoreBundle\Services\Aware\EntityManagerAware;
 class SubjectsService
 {
     use EntityManagerAware;
+    use AuthenticationServiceAware;
 
-    public function receivedRequest($id)
+    public function receivedRequest(Request $request, $id)
     {
         $professor = $this->em->getRepository("CoreBundle:Professors")
             ->findOneBy(array(

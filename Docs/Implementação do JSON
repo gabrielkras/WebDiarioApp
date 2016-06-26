@@ -48,7 +48,7 @@ Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
 
 ## Obter Lista de Materias (Professor)
 
-GET http://<hostname or Ip>/app_dev.php/api/subjects/professor/{id}
+GET http://<hostname or Ip>/app_dev.php/api/professor/subjects/{id}
 (header)
 Content-Type: application/json
 Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
@@ -239,22 +239,32 @@ Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
   "type": "ok",
   "title": "Operacao realizada com sucesso!",
   "statusCode": 200,
-  "message": "Listagem de Alunos realizada com sucesso!",
+  "message": "Listagem de Professores Realizada com sucesso!",
   "extraInformation": {
-	"students": [
-		{
-			"name": "Prof. Zeka Pagodinho",
-			"registry": "135025-1",
-			"status_code": 0,
-			"id": 1,
-		}
-		{
-			"name": "Prof. Alfacinha",
-			"registry": "135020-x",
-			"status_code": 0,
-			"id": 2,
-		}
-	]
+    "subjects": [
+      {
+        "subject": {
+          "name": "Desenvolvimento de Sistemas Web",
+          "abbreviation": "DSW6",
+          "classroom": {
+            "classroom_id": 1,
+            "year": 2016,
+            "semester": 0,
+            "enabled": true
+          },
+          "professor": {
+            "name": "Andre Valenti",
+            "registry": "andre",
+            "id": 8
+          },
+          "student": {
+            "name": "Bruno Belotti",
+            "registry": "135020-x",
+            "id": 2
+          }
+        }
+      }
+   ]
 }
 
 ###################################################

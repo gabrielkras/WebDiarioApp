@@ -14,3 +14,10 @@ services:
     class: WebDiario\CoreBundle\Services\Subjects\SubjectsService
     calls:
       - [ setEntityManager, [@doctrine.orm.entity_manager]]
+      - [ setAuthenticationService, [@domain.authentication]]
+
+  domain.professors:
+      class: WebDiario\CoreBundle\Services\professors\ProfessorService
+      calls:
+        - [ setEntityManager, [@doctrine.orm.entity_manager]]
+        - [ setAuthenticationService, [@domain.authentication]]

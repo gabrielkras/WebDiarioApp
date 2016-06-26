@@ -22,30 +22,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuthenticationService.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Authentication/AuthenticationService.php">
+      <file leaf-file-name="SubjectsService.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Subjects/SubjectsService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.5925925">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state vertical-scroll-proportion="-10.222222">
+              <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="72" selection-end-column="43" />
               <folding>
-                <element signature="e#63#125#0#PHP" expanded="true" />
-                <element signature="e#3926#3945#1#PHP" expanded="true" />
-                <element signature="e#6669#6690#1#PHP" expanded="true" />
-                <element signature="e#7390#7409#1#PHP" expanded="true" />
+                <element signature="e#58#103#0#PHP" expanded="true" />
+                <element signature="e#659#682#1#PHP" expanded="true" />
+                <element signature="e#1085#1107#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubjectsService.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Subjects/SubjectsService.php">
+      <file leaf-file-name="ProfessorService.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/professors/ProfessorService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5609756">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.70731705">
+              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding>
-                <element signature="e#58#103#0#PHP" expanded="true" />
-                <element signature="e#588#611#1#PHP" expanded="true" />
-                <element signature="e#1014#1036#1#PHP" expanded="true" />
+                <element signature="e#60#105#0#PHP" expanded="true" />
+                <element signature="e#666#687#1#PHP" expanded="true" />
+                <element signature="e#1088#1110#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,21 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Subjects.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Entity/Subjects.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.6666667">
-              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Classroom.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Repository/Classroom.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.666667">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+            <state vertical-scroll-proportion="-13.407408">
+              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
               <folding>
                 <element signature="e#51#85#0#PHP" expanded="true" />
               </folding>
@@ -86,8 +75,8 @@
       <file leaf-file-name="Classroom.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Entity/Classroom.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.333333">
-              <caret line="64" column="7" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+            <state vertical-scroll-proportion="-8.666667">
+              <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -97,7 +86,7 @@
         <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Controller/ProfessorsController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-12.222222">
-              <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
+              <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
               <folding>
                 <element signature="e#50#95#0#PHP" expanded="true" />
               </folding>
@@ -109,7 +98,31 @@
         <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/routes/resources.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
+              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+              <folding>
+                <marker date="1466967184417" expanded="true" signature="593:736" placeholder="api_professor_listall:" />
+                <marker date="1466967184417" expanded="true" signature="651:717" placeholder="defaults:" />
+                <marker date="1466967184417" expanded="true" signature="722:736" placeholder="methods:" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/services.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfessorServiceAware.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Aware/ProfessorServiceAware.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.0">
+              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -119,8 +132,12 @@
         <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Resources/config/services.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
-              <folding />
+              <caret line="19" column="68" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
+              <folding>
+                <marker date="1466966752623" expanded="true" signature="0:836" placeholder="services:" />
+                <marker date="1466966752623" expanded="true" signature="389:605" placeholder="domain.subjects:" />
+                <marker date="1466966752623" expanded="true" signature="476:605" placeholder="calls:" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,16 +177,18 @@
         <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Entity/Professors.php" />
         <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Entity/Students.php" />
         <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Authentication/AuthenticationService.php" />
-        <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/WebDiario/ApiBundle/Controller/StudentsController.php" />
-        <option value="$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Aware/SubjectsServiceAware.php" />
-        <option value="$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/routes/resources.yml" />
-        <option value="$PROJECT_DIR$/src/WebDiario/ApiBundle/Controller/ProfessorsController.php" />
         <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Repository/ClassroomStudentsRepository.php" />
+        <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Subjects/SubjectsService.php" />
+        <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Aware/ProfessorServiceAware.php" />
+        <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/WebDiario/ApiBundle/Controller/ProfessorsController.php" />
+        <option value="$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/routes/resources.yml" />
         <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Entity/Classroom.php" />
         <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Repository/Classroom.php" />
-        <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Subjects/SubjectsService.php" />
+        <option value="$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/professors/ProfessorService.php" />
       </list>
     </option>
   </component>
@@ -340,6 +359,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Students" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebDiario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebDiario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebDiario" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CoreBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="professors" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -693,9 +742,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1368" height="707" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2839879" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23867069" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32906765" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -986,18 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <marker date="1466915485619" expanded="true" signature="0:855" placeholder="services:" />
-            <marker date="1466915485619" expanded="true" signature="418:632" placeholder="api.controller.students:" />
-            <marker date="1466915485619" expanded="true" signature="512:632" placeholder="calls:" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1038,32 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/routes/resources.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="59" selection-start-line="20" selection-start-column="59" selection-end-line="20" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Controller/ProfessorsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.222222">
-          <caret line="20" column="52" selection-start-line="20" selection-start-column="52" selection-end-line="20" selection-end-column="52" />
-          <folding>
-            <element signature="e#50#95#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Entity/Subjects.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6666667">
@@ -1077,29 +1088,68 @@
         <state vertical-scroll-proportion="3.5925925">
           <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
           <folding>
-            <element signature="e#63#125#0#PHP" expanded="true" />
-            <element signature="e#3926#3945#1#PHP" expanded="true" />
-            <element signature="e#6669#6690#1#PHP" expanded="true" />
-            <element signature="e#7390#7409#1#PHP" expanded="true" />
+            <element signature="e#63#125#0#PHP" expanded="false" />
+            <element signature="e#6669#6690#1#PHP" expanded="false" />
+            <element signature="e#7390#7409#1#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Aware/ProfessorServiceAware.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="68" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
+          <folding>
+            <marker date="1466966752623" expanded="true" signature="0:836" placeholder="services:" />
+            <marker date="1466966752623" expanded="true" signature="389:605" placeholder="domain.subjects:" />
+            <marker date="1466966752623" expanded="true" signature="476:605" placeholder="calls:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="49" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Resources/config/routes/resources.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding>
+            <marker date="1466967184417" expanded="true" signature="593:736" placeholder="api_professor_listall:" />
+            <marker date="1466967184417" expanded="true" signature="651:717" placeholder="defaults:" />
+            <marker date="1466967184417" expanded="true" signature="722:736" placeholder="methods:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebDiario/ApiBundle/Controller/ProfessorsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.222222">
+          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
+          <folding>
+            <element signature="e#50#95#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Entity/Classroom.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.333333">
-          <caret line="64" column="7" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+        <state vertical-scroll-proportion="-8.666667">
+          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="77" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Repository/Classroom.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.666667">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-          <folding>
-            <element signature="e#51#85#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1111,14 +1161,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Repository/Classroom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.407408">
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+          <folding>
+            <element signature="e#51#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/Subjects/SubjectsService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5609756">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.222222">
+          <caret line="69" column="8" selection-start-line="69" selection-start-column="8" selection-end-line="72" selection-end-column="43" />
           <folding>
             <element signature="e#58#103#0#PHP" expanded="true" />
-            <element signature="e#588#611#1#PHP" expanded="true" />
-            <element signature="e#1014#1036#1#PHP" expanded="true" />
+            <element signature="e#659#682#1#PHP" expanded="true" />
+            <element signature="e#1085#1107#1#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebDiario/CoreBundle/Services/professors/ProfessorService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.70731705">
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+          <folding>
+            <element signature="e#60#105#0#PHP" expanded="true" />
+            <element signature="e#666#687#1#PHP" expanded="true" />
+            <element signature="e#1088#1110#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

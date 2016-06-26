@@ -20,3 +20,8 @@ api_professor_list_subjects:
     path:     /professor/subjects/{id}
     defaults: { _controller: api.controller.professors:subjectList}
     methods: [GET]
+
+api_professor_listall:
+    path:     /professors/{id}
+    defaults: { _controller: api.controller.professors:listProfessors}
+    methods: [GET]

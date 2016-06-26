@@ -23,3 +23,4 @@ services:
       calls:
         - [setAuthenticationService, [@domain.authentication]]
         - [setSubjectsService, [@domain.subjects]]
+        - [setProfessorService, [@domain.professors]]

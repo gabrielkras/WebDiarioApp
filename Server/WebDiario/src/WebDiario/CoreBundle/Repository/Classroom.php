@@ -4,6 +4,7 @@ namespace WebDiario\CoreBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 use WebDiario\CoreBundle\Entity\Professors;
+use WebDiario\CoreBundle\Entity\Students;
 
 class Classroom extends EntityRepository
 {
@@ -17,6 +18,21 @@ class Classroom extends EntityRepository
             ->innerJoin("c.students",'st')
             ->where('c.professor = :id')
             ->setParameter('id',$professors)
+            ->getQuery();
+        return $query->getArrayResult();
+    }
+
+    public function findAllSubjectsByStudent(Students $student)
+    {
+        $query = $this->createQueryBuilder('c')
+            ->select('c','p','s','co','st')
+            ->innerJoin('c.professor', 'p')
+            ->innerJoin('c.subject','s')
+            ->innerJoin('c.course', "co")
+            ->leftJoin("c.students","st")
+            ->where("st.id  = :id")
+            ->setParameter('id',$student)
+            ->groupBy("c.id")
             ->getQuery();
         return $query->getArrayResult();
     }
