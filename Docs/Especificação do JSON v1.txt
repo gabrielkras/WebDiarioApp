@@ -1,0 +1,377 @@
+# RECURSOS DA API WEBDIARIO
+
+# AUTENTICAÇÃO
+POST /api/login				-> Autentica Usuario
+GET /api/logout				-> Desloga Usuario da API
+
+# ALUNOS
+GET /api/alunos 			-> Lista de Alunos
+GET /api/alunos/{matricula} 		-> Retorna Aluno Único
+
+# PROFESSORES
+GET /api/professores			-> Lista de Todos os Professores
+GET /api/professores/{matricula}	-> Retorna Professor Único
+
+# MATERIAS
+GET /api/materias			-> Lista de Materias
+GET /api/materias/{cod}			-> Detalhar Info da Materia	
+
+# TURMAS
+GET /api/turma/				-> Obtem todas as turmas
+GET /api/turma/{cod}			-> Somente uma Turma
+
+# FALTAS
+GET /api/alunos/{matricula}/{materia}/faltas	-> Listar faltas por materia
+PUT /api/alunos/{matricula}/{materia}/faltas	-> Adiciona Faltas
+
+################################################################
+# FORMATOS DO JSON
+
+>> POST /api/login
+
+> ENTRADA:
+{
+	"matricula":"135025-1"
+	"senha":"123456"
+}
+
+> RETORNO:
+{
+	"type": "created",
+  	"title": "Usuario Autenticado!",
+  	"statusCode": 201,
+  	"message": "Voce foi autenticado na API",
+  	"extraInformation": 
+		[
+			"token":"ABCDEF1234"
+		]
+
+}
+
+####
+
+>> GET /api/logout
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Voce foi desconectado com sucesso da API!",
+  	"extraInformation": []
+}
+
+####
+
+>> GET /api/alunos
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Listagem de alunos concluida com sucesso",
+  	"extraInformation": 
+		[
+			"object_array": [
+						{
+							"id":"1",
+							"name":"Zeka",
+							"enabled":"true"	
+						}
+						{
+							"id":"2",
+							"name":"Zeka2",
+							"enabled":"true"	
+						}
+	
+					]
+		]
+}
+
+####
+
+>> GET /api/alunos/{matricula} 
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Listagem de alunos concluida com sucesso",
+  	"extraInformation": 
+		[
+			"id":"1",
+			"name":"Zeka",
+			"enabled":"true"
+		]
+}
+
+####
+
+>> GET /api/professores
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Listagem de alunos concluida com sucesso",
+  	"extraInformation":
+		[
+			"object_array": [
+						{
+							"id":"1",
+							"name":"Zeka",
+							"enabled":"true"	
+						}
+						{
+							"id":"2",
+							"name":"Zeka2",
+							"enabled":"true"	
+						}
+	
+					]
+		]
+}
+
+####
+
+>> GET /api/professores/{matricula} 
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Listagem de alunos concluida com sucesso",
+  	"extraInformation": 
+		[
+			"id":"1",
+			"name":"Zeka",
+			"enabled":"true"
+		]
+}
+
+####
+
+>> GET /api/materias
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Listagem de alunos concluida com sucesso",
+  	"extraInformation":
+		[
+			"object_array": [
+						{
+							"id":"1",
+							"name":"Banco de Dados",
+							"abbreviation":"BD1",
+							"course":"TADS"	
+						}
+						{
+							"id":"2",
+							"name":"Banco de Dados2",
+							"abbreviation":"BD1",
+							"course":"TADS"	
+						}
+	
+					]
+		]
+}
+
+####
+
+>> GET /api/materias/{cod} 
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Listagem de alunos concluida com sucesso",
+  	"extraInformation": 
+		[
+			"id":"1",
+			"name":"Banco de Dados",
+			"abbreviation":"BD1",
+			"course":"TADS"
+		]
+}
+
+####
+
+>> GET /api/turmas
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Listagem de alunos concluida com sucesso",
+  	"extraInformation":
+		[
+			"object_array": [
+						{
+							"id":"1",
+							"course":"TADS",
+							"subject":"BD1",
+							"year":"2016",
+							"semester":"0",
+							"professor":"blá",
+							"students":
+								[
+								    {
+									"id":"1",
+									"name":"Zeka",
+									"enabled":"true"
+								    },
+								    {
+									"id":"2",
+									"name":"Zeka",
+									"enabled":"true"
+								    },
+								]
+							"enabled":"true"	
+						},
+						{
+							"id":"2",
+							"course":"TADS",
+							"subject":"BD1",
+							"year":"2016",
+							"semester":"1",
+							"professor":"Blá",
+							"students":
+								[
+								    {
+									"id":"1",
+									"name":"Zeka",
+									"enabled":"true"
+								    },
+								    {
+									"id":"2",
+									"name":"Zeka",
+									"enabled":"true"
+								    },
+								]
+							"enabled":"true"	
+						}
+	
+					]
+		]
+}
+
+####
+
+>> GET /api/turmas/{cod} 
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Listagem de alunos concluida com sucesso",
+  	"extraInformation": 
+		[
+			{
+				"id":"1",
+				"course":"TADS",
+				"subject":"BD1",
+				"year":"2016",
+				"semester":"0",
+				"professor":"blá",
+				"students":
+					[
+					    {
+						"id":"1",
+						"name":"Zeka",
+						"enabled":"true"
+					    },
+					    {
+						"id":"2",
+						"name":"Zeka",
+						"enabled":"true"
+					    },
+					]
+				"enabled":"true"	
+			}
+		]
+}
+
+#### 
+
+>> GET /api/alunos/{matricula}/{materia}/faltas
+
+> ENTRADA:
+	Não Possui
+
+> RETORNO:
+{
+  	"type": "ok",
+  	"title": "Operacao realizada com sucesso!",
+  	"statusCode": 200,
+  	"message": "Listagem de alunos concluida com sucesso",
+  	"extraInformation": 
+		[
+			{
+				"classroom":
+					{
+						"id":"1",
+						"course":"TADS",
+		                        	"subject":"BD1",
+						"year":"2016",
+						"semester":"0",
+						"professor":"blá",
+						"students":
+							{
+								"id":"1",
+								"name":"Zeka",
+								"enabled":"true"
+						        },
+						"enabled":"true"
+						"faults":
+							[
+								{
+									"id":"1",
+									"date":"2016-12-23",
+									"quantity":"4"
+								}
+							]
+						
+					}				
+					
+			}
+		]
+}
+
+
