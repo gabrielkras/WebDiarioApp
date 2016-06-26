@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">WebDiarioApp</string>
+    <string name="nomeUsuario">Nome</string>
+    <string name="btnLogin">Entrar</string>
+    <string name="btnSair">Sair</string>
+    <string name="contentDescriptionLogoApp">Logo do Sistema</string>
+    <string name="contentDescriptionMaterias">Listar Matérias</string>
+    <string name="contentDescriptionChamada">Fazer Chamada</string>
+    <string name="contentDescriptionAlunos">Listar Alunos</string>
+    <string name="contentDescriptionLogoff">Fazer Logoff</string>
+    <string name="contentDescriptionProfessor">Listar Professores</string>
+    <string name="contentDescriptionPresenca">Presença</string>
+</resources>
