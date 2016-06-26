@@ -110,4 +110,12 @@ class Professors
         return $this->id;
     }
 
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return "professor";
+    }
+
 }

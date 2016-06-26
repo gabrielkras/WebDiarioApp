@@ -110,5 +110,12 @@ class Students
         $this->enabled = $enabled;
     }
 
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return "student";
+    }
 
 }

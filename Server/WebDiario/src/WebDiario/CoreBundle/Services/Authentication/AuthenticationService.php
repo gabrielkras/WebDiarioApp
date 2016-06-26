@@ -38,10 +38,16 @@ class AuthenticationService
                     $problem->set('message',"Erro ao gerar token de validacao!");
                     throw new ApiProblemException($problem);
                 }
+                $array = [
+                    "name"  => $account->getName(),
+                    "id"    => $account->getId(),
+                    "type"  => $account->getType()
+                ];
                 $this->saveTokenAndActiveThen($token,$account);
                 $apiResponse = ApiResponse::createApiResponseByCode(ApiResponse::HTTP_CREATED);
                 $apiResponse->set('token', $token);
                 $apiResponse->setMessage("Autenticacao realizada com sucesso!");
+                $apiResponse->set("personalInformation", $array);
                 return $apiResponse->getResponse();
             }
         }
@@ -83,7 +89,7 @@ class AuthenticationService
             $apiProblem->set('message', "Nao foi possivel identifica-lo! Por favor, envie o token de autorizacao");
             throw new ApiProblemException($apiProblem);
         }
-        $token = $this->em->getRepository('DomainBundle:Tokens')
+        $token = $this->em->getRepository('CoreBundle:Tokens')
             ->findOneBy(
                 array(
                     'token' => $auth
@@ -135,9 +141,16 @@ class AuthenticationService
             $dateTime = new \DateTime("now");
             if($token->getExpire() > $dateTime)
             {
+                $array = [
+                    "name"  => $account->getName(),
+                    "id"    => $account->getId(),
+                    "type"  => $account->getType()
+                ];
                 $apiResponse = ApiResponse::createApiResponseByCode(ApiResponse::HTTP_CREATED);
                 $apiResponse->set('token', $token->getToken());
                 $apiResponse->setMessage("Autenticacao realizada com sucesso!");
+                $apiResponse->set("personalInformation", $array);
+
                 return $apiResponse->getResponse();
             }
             else
@@ -175,9 +188,15 @@ class AuthenticationService
             $dateTime = new \DateTime("now");
             if($token->getExpire() > $dateTime)
             {
+                $array = [
+                    "name"  => $account->getName(),
+                    "id"    => $account->getId(),
+                    "type"  => $account->getType(),
+                ];
                 $apiResponse = ApiResponse::createApiResponseByCode(ApiResponse::HTTP_CREATED);
                 $apiResponse->set('token', $token->getToken());
                 $apiResponse->setMessage("Autenticacao realizada com sucesso!");
+                $apiResponse->set('personalInformation', $array);
                 return $apiResponse->getResponse();
             }
             else

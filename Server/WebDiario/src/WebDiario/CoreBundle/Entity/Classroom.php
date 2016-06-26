@@ -31,7 +31,7 @@ class Classroom
      * @ORM\ManyToOne(targetEntity="Subjects")
      * @ORM\JoinColumn(name="subject_id", referencedColumnName="id")
      */
-    private $subjects;
+    private $subject;
 
     /**
      * @ORM\Column(name="year",type="integer", length=4)
@@ -48,6 +48,19 @@ class Classroom
      * @ORM\JoinColumn(name="professor_id", referencedColumnName="id")
      */
     private $professor;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Students")
+     * @ORM\JoinTable(name="classroom_students",
+     *     joinColumns={
+     *          @ORM\JoinColumn(name="classroom_id", referencedColumnName="id")
+     *     },
+     *     inverseJoinColumns={
+     *          @ORM\JoinColumn(name="student_id", referencedColumnName="id")
+     *     },
+     * )
+     */
+    private $students;
 
     /**
      * @ORM\Column(name="enabled", type="boolean")
@@ -83,7 +96,7 @@ class Classroom
      */
     public function getSubjects()
     {
-        return $this->subjects;
+        return $this->subject;
     }
 
     /**
@@ -91,7 +104,7 @@ class Classroom
      */
     public function setSubjects($subjects)
     {
-        $this->subjects = $subjects;
+        $this->subject = $subjects;
     }
 
     /**
@@ -140,6 +153,14 @@ class Classroom
     public function setProfessor($professor)
     {
         $this->professor = $professor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStudents()
+    {
+        return $this->students;
     }
 
     /**

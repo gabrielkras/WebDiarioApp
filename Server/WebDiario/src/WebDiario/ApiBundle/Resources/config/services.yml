@@ -12,8 +12,14 @@ services:
       calls:
         - [setAuthenticationService, [@domain.authentication]]
 
-    api.controller.list.students:
+    api.controller.students:
       class: WebDiario\ApiBundle\Controller\StudentsController
       calls:
         - [setAuthenticationService, [@domain.authentication]]
         - [setStudentService, [@domain.students]]
+
+    api.controller.professors:
+      class: WebDiario\ApiBundle\Controller\ProfessorsController
+      calls:
+        - [setAuthenticationService, [@domain.authentication]]
+        - [setSubjectsService, [@domain.subjects]]
