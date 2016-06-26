@@ -26,7 +26,7 @@
             android:layout_row="0"
             android:background="@null"
             android:contentDescription="@string/contentDescriptionMaterias"
-            android:onClick="exibirMaterias"
+            android:onClick="exibirMateriasProfessor"
             android:src="@drawable/materias" />
 
         <ImageButton

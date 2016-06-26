@@ -15,7 +15,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void carregarMenu(View view) {
-        Intent carregarMenu = new Intent(this, MenuProfessorActivity.class);
+        Intent carregarMenu = new Intent(this, MenuAlunoActivity.class);
         startActivity(carregarMenu);
     }
 

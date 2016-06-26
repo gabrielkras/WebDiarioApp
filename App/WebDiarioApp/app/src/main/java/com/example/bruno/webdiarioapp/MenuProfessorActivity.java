@@ -15,7 +15,7 @@ public class MenuProfessorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_professor);
     }
 
-    public void exibirMaterias(View view) {
+    public void exibirMateriasProfessor(View view) {
         intent = new Intent(this, ListaMateriasActivity.class);
         startActivity(intent);
     }

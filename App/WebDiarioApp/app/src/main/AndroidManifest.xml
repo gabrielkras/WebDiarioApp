@@ -19,7 +19,8 @@
         <activity android:name=".ListaMateriasActivity" />
         <activity android:name=".MenuAlunoActivity" />
         <activity android:name=".ChamadaActivity" />
-        <activity android:name=".ListaAlunosActivity"></activity>
+        <activity android:name=".ListaAlunosActivity" />
+        <activity android:name=".ListaProfessoresActivity" />
     </application>
 
 </manifest>
