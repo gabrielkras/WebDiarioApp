@@ -4,18 +4,18 @@
     api-level="21"
     density="xxxhdpi"
     format="7"
-    timestamp="48548881122063"
+    timestamp="29735715484404"
     token="-1926371203482803019" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="88" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="10" />
     <task
         name="verifier"
         duration="0" />
@@ -24,12 +24,17 @@
         location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
         type="DEX" />
 
-    <build timestamp="38099750865977" >
+    <build timestamp="28884598085558" >
         <artifact
             location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="48548881122063" >
+    <build timestamp="29520808672969" >
+        <artifact
+            location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+    </build>
+    <build timestamp="29735715484404" >
         <artifact
             location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
             type="DEX" />

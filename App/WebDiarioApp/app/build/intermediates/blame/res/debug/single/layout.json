@@ -12,6 +12,10 @@
         "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/layout/notification_template_part_chronometer.xml"
     },
     {
+        "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/layout/activity_splash.xml",
+        "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/src/main/res/layout/activity_splash.xml"
+    },
+    {
         "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/layout/adapter_lista_alunos.xml",
         "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/src/main/res/layout/adapter_lista_alunos.xml"
     },
@@ -138,6 +142,10 @@
     {
         "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
         "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/layout/activity_aluno_detalhe.xml",
+        "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/src/main/res/layout/activity_aluno_detalhe.xml"
     },
     {
         "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/layout/activity_lista_professores.xml",

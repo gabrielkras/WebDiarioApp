@@ -5,5 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="verde">#458B00</color>
     <color name="verde_claro">#CFDBC5</color>
+    <color name="verde_claro_escuro">#A4BA91</color>
     <color name="amarelo_verde_escuro">#263300</color>
 </resources>

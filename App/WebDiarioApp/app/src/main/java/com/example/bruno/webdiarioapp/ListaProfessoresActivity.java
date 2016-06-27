@@ -53,8 +53,8 @@ public class ListaProfessoresActivity extends AppCompatActivity {
     private void instanciarObjetos() {
         retornoJSON = getIntent();
         listaProfessores = (ListView) findViewById(R.id.listViewProfessores);
-        nomeProfessor = new String[]{"professor1", "professor2", "professor3"};
-        prontuario = new String[]{"prof1", "prof2", "prof3"};
+        nomeProfessor = new String[]{"Professor1", "Professor2", "Professor3", "Professor4", "Professor5", "Professor6", "Professor7"};
+        prontuario = new String[]{"prof1", "prof2", "prof3", "prof4", "prof5", "prof6", "prof7"};
         adapter = new ListaProfessorAdapter(this, R.layout.adapter_lista_professores, R.id.textViewNomeProfessor, nomeProfessor, prontuario);
     }
 }

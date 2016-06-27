@@ -76,12 +76,12 @@
         "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/drawable/abc_dialog_material_background.xml"
     },
     {
-        "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
-        "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/drawable/abc_ratingbar_indicator_material.xml"
-    },
-    {
         "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
         "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/drawable/abc_btn_check_material.xml"
+    },
+    {
+        "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
+        "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
@@ -118,6 +118,10 @@
     {
         "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
         "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/drawable/abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/splash.xml",
+        "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/src/main/res/drawable/splash.xml"
     },
     {
         "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/abc_tab_indicator_material.xml",

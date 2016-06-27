@@ -52,8 +52,8 @@ public class ListaMateriasActivity extends AppCompatActivity {
     private void instanciarObjetos() {
         retornoJSON = getIntent();
         listaMaterias = (ListView) findViewById(R.id.listViewMaterias);
-        nomeMateria = new String[]{"materia1", "materia2", "materia3"};
-        siglaMateria = new String[]{"mat1", "mat2", "mat3"};
+        nomeMateria = new String[]{"Materia1", "Materia2", "Materia3", "Materia4", "Materia5", "Materia6", "Materia7"};
+        siglaMateria = new String[]{"mat1", "mat2", "mat3", "mat4", "mat5", "mat6", "mat7"};
         adapter = new ListaMateriasAdapter(this, R.layout.adapter_lista_materias, R.id.textViewNomeMateria, nomeMateria, siglaMateria);
     }
 }

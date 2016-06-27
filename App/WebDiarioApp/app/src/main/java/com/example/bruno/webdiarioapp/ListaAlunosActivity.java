@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,13 +31,28 @@ public class ListaAlunosActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         listaAlunos.setAdapter(adapter);
+        listaAlunos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent detalheAluno = new Intent(ListaAlunosActivity.this, AlunoDetalheActivity.class);
+                TextView textViewNomeAluno = (TextView) view.findViewById(R.id.textViewNomeAluno);
+                TextView textViewProntuario = (TextView) view.findViewById(R.id.textViewProntuario);
+                Bundle bundle = new Bundle();
+                bundle.putString("nomeAluno", textViewNomeAluno.getText().toString());
+                bundle.putString("prontuario", textViewProntuario.getText().toString());
+                bundle.putString("descricao1", "Descrição 1");
+                bundle.putString("descricao2", "Descrição 2");
+                detalheAluno.putExtras(bundle);
+                startActivity(detalheAluno);
+            }
+        });
     }
 
     private void instanciarObjetos() {
         retornoJSON = getIntent();
         listaAlunos = (ListView) findViewById(R.id.listViewAlunos);
-        nomeAluno = new String[]{"aluno1", "aluno1", "aluno1"};
-        prontuario = new String[]{"alu1", "alu2", "alu3"};
+        nomeAluno = new String[]{"Aluno1", "Aluno2", "Aluno3", "Aluno4", "Aluno5", "Aluno6", "Aluno7"};
+        prontuario = new String[]{"alu1", "alu2", "alu3", "alu4", "alu5", "alu6", "alu7"};
         adapter = new ListaAlunoAdapter(this, R.layout.adapter_lista_alunos, R.id.textViewNomeAluno, nomeAluno, prontuario);
     }
 }

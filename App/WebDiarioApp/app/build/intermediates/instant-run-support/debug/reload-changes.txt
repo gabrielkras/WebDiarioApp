@@ -1,11 +1,2 @@
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/R$styleable$override.class
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/R$integer$override.class
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/R$style$override.class
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/R$string$override.class
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/R$mipmap$override.class
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/R$layout$override.class
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/android/support/v7/appcompat/R$drawable$override.class
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/R$id$override.class
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/R$drawable$override.class
+CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/ChamadaActivity$override.class
 CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/android/tools/fd/runtime/AppPatchesLoaderImpl.class
-CHANGED,/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/instantRun/debug/folders/4000/5/enhanced/com/example/bruno/webdiarioapp/LoginActivity$override.class

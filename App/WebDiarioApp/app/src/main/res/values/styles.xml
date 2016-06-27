@@ -5,7 +5,11 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/verde</item>
         <item name="colorPrimaryDark">@color/amarelo_verde_escuro</item>
-        <item name="colorAccent">@color/verde_claro</item>
+        <item name="colorAccent">@color/verde</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
 </resources>

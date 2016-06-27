@@ -1,6 +1,10 @@
 package com.example.bruno.webdiarioapp;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText editTextSenha;
     EditText editTextProntuario;
     JSONArray jsonArray;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,18 +54,26 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        adicionarNoSpinner();
-        construindoJSON(editTextProntuario.getText().toString(), editTextSenha.getText().toString(), spinnerEscolhaTipo.toString());
+        jsonTask = new JSONTask();
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setTitle("Carregando");
+        progressDialog.setMessage("Processando JSON");
+        progressDialog.setProgressStyle(progressDialog.STYLE_SPINNER);
+        progressDialog.setIndeterminate(true);
     }
 
     private void instanciarObjetos() {
         editTextProntuario = (EditText) findViewById(R.id.editProntuarioUsuario);
         editTextSenha = (EditText) findViewById(R.id.editSenhaUsuario);
         spinnerEscolhaTipo = (Spinner) findViewById(R.id.spinnerEscolhaTipo);
-        jsonTask = new JSONTask();
+        adicionarNoSpinner();
     }
 
     public void carregarMenu(View view) {
+        progressDialog.show();
+        construindoJSON(editTextProntuario.getText().toString(), editTextSenha.getText().toString(), spinnerEscolhaTipo.toString());
+        jsonTask.setContext(LoginActivity.this);
+        jsonTask.setDialog(progressDialog);
         fazerConexao();
         testandoJSON();
         if (escolhaDoSpinner.equals("Professor")) {
@@ -120,7 +134,6 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("erro", e.toString());
             }
         }
-        Log.d("teste", jsonArray.toString());
     }
 
     private void construindoJSON(String prontuario, String senha, String tipoLogin) {
@@ -139,6 +152,13 @@ class JSONTask extends AsyncTask<String, String, String> {
     HttpURLConnection conexao;
     String JSONConsultaBanco;
     String retornoJson;
+    Context context;
+    ProgressDialog progressDialog;
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+    }
 
     @Override
     protected String doInBackground(String... urls) {
@@ -169,8 +189,6 @@ class JSONTask extends AsyncTask<String, String, String> {
             }
 
             retornoJson = stringBuffer.toString();
-
-            Log.d("teste", retornoJson);
             conexao.disconnect();
             return retornoJson;
         } catch (MalformedURLException e) {
@@ -185,9 +203,18 @@ class JSONTask extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
+        progressDialog.dismiss();
     }
 
     public void setJson(String JSONConsultaBanco) {
         this.JSONConsultaBanco = JSONConsultaBanco;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
+    public void setDialog(ProgressDialog progressDialog) {
+        this.progressDialog = progressDialog;
     }
 }

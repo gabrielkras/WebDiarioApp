@@ -2,28 +2,55 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bruno.webdiarioapp">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuProfessorActivity" />
-        <activity android:name=".ListaMateriasActivity" />
-        <activity android:name=".MenuAlunoActivity" />
-        <activity android:name=".ChamadaActivity" />
-        <activity android:name=".ListaAlunosActivity" />
-        <activity android:name=".ListaProfessoresActivity" />
-        <activity android:name=".MateriaDetalheActivity" />
-        <activity android:name=".ProfessorDetalheActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MenuProfessorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ListaMateriasActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MenuAlunoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChamadaActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ListaAlunosActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ListaProfessoresActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MateriaDetalheActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProfessorDetalheActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AlunoDetalheActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
