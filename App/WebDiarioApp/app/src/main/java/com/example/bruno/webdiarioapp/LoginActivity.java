@@ -55,11 +55,6 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         jsonTask = new JSONTask();
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Carregando");
-        progressDialog.setMessage("Processando JSON");
-        progressDialog.setProgressStyle(progressDialog.STYLE_SPINNER);
-        progressDialog.setIndeterminate(true);
     }
 
     private void instanciarObjetos() {
@@ -67,29 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         editTextSenha = (EditText) findViewById(R.id.editSenhaUsuario);
         spinnerEscolhaTipo = (Spinner) findViewById(R.id.spinnerEscolhaTipo);
         adicionarNoSpinner();
-    }
-
-    public void carregarMenu(View view) {
-        progressDialog.show();
-        construindoJSON(editTextProntuario.getText().toString(), editTextSenha.getText().toString(), spinnerEscolhaTipo.toString());
-        jsonTask.setContext(LoginActivity.this);
-        jsonTask.setDialog(progressDialog);
-        fazerConexao();
-        testandoJSON();
-        if (escolhaDoSpinner.equals("Professor")) {
-            carregarMenu = new Intent(this, MenuProfessorActivity.class);
-        } else {
-            carregarMenu = new Intent(this, MenuAlunoActivity.class);
-        }
-        startActivity(carregarMenu);
-    }
-
-    public void sair(View view) {
-        this.finish();
-        Intent sair = new Intent(Intent.ACTION_MAIN);
-        sair.addCategory(Intent.CATEGORY_HOME);
-        sair.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(sair);
+        progressDialog = new ProgressDialog(this);
     }
 
     private void adicionarNoSpinner() {
@@ -111,16 +84,37 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    // clique do botão
+    public void carregarMenu(View view) {
+        construindoJSON(editTextProntuario.getText().toString(), editTextSenha.getText().toString(), escolhaDoSpinner);
+        jsonTask.setDialog(progressDialog);
+        fazerConexao();
+        testandoJSON();
+        if (escolhaDoSpinner.equals("Professor")) {
+            carregarMenu = new Intent(this, MenuProfessorActivity.class);
+        } else {
+            carregarMenu = new Intent(this, MenuAlunoActivity.class);
+        }
+        startActivity(carregarMenu);
+    }
+
+    private void construindoJSON(String prontuario, String senha, String tipoLogin) {
+        JSONConsultaBanco = "" +
+                "{" +
+                "\"registry\":\"" + prontuario + "\"" +
+                "\"password\":\"" + senha + "\"" +
+                "\"login_type\":\"" + tipoLogin + "\"" +
+                "}";
+        jsonTask.setJson(JSONConsultaBanco);
+    }
+
+
     private void fazerConexao() {
         try {
             // jsonTask.execute("http://192.168.0.102/app.php/api/login").get();
             retornoJSON = jsonTask.execute("http://jsonplaceholder.typicode.com/posts").get();
             jsonArray = new JSONArray(retornoJSON);
-        } catch (InterruptedException e) {
-            Log.d("erro", e.toString());
-        } catch (ExecutionException e) {
-            Log.d("erro", e.toString());
-        } catch (JSONException e) {
+        } catch (InterruptedException | ExecutionException | JSONException e) {
             Log.d("erro", e.toString());
         }
     }
@@ -136,14 +130,13 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void construindoJSON(String prontuario, String senha, String tipoLogin) {
-        JSONConsultaBanco = "" +
-                "{" +
-                "\"registry\":\"" + prontuario + "\"" +
-                "\"password\":\"" + senha + "\"" +
-                "\"login_type\":\"" + tipoLogin + "\"" +
-                "}";
-        jsonTask.setJson(JSONConsultaBanco);
+    // clique do botão
+    public void sair(View view) {
+        this.finish();
+        Intent sair = new Intent(Intent.ACTION_MAIN);
+        sair.addCategory(Intent.CATEGORY_HOME);
+        sair.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(sair);
     }
 }
 
@@ -152,12 +145,17 @@ class JSONTask extends AsyncTask<String, String, String> {
     HttpURLConnection conexao;
     String JSONConsultaBanco;
     String retornoJson;
-    Context context;
     ProgressDialog progressDialog;
 
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
+        progressDialog.setTitle("Carregando");
+        progressDialog.setMessage("Processando JSON");
+        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setCancelable(false);
+        //progressDialog.show();
     }
 
     @Override
@@ -167,8 +165,8 @@ class JSONTask extends AsyncTask<String, String, String> {
             conexao = (HttpURLConnection) url.openConnection();
             conexao.setRequestProperty("Content-Type", "application/json");
             conexao.setRequestProperty("Accept", "application/json");
-            conexao.setDoOutput(false);
             conexao.setRequestMethod("GET");
+            conexao.setDoOutput(false);
             conexao.connect();
 
             /*OutputStream outputStream = conexao.getOutputStream();
@@ -191,8 +189,6 @@ class JSONTask extends AsyncTask<String, String, String> {
             retornoJson = stringBuffer.toString();
             conexao.disconnect();
             return retornoJson;
-        } catch (MalformedURLException e) {
-            Log.d("teste", e.toString());
         } catch (IOException e) {
             Log.d("teste", e.toString());
         }
@@ -203,15 +199,11 @@ class JSONTask extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        progressDialog.dismiss();
+        //progressDialog.dismiss();
     }
 
     public void setJson(String JSONConsultaBanco) {
         this.JSONConsultaBanco = JSONConsultaBanco;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
     }
 
     public void setDialog(ProgressDialog progressDialog) {
