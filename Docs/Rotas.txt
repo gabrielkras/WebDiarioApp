@@ -1,0 +1,17 @@
+## LOGIN
+POST http://<hostname or Ip>/app_dev.php/api/login
+
+## LOGOUT
+POST http://<hostname or Ip>/app_dev.php/api/logout
+
+## Obter Lista de Materias (Professor) e Lista de Alunos Matriculados
+GET http://<hostname or Ip>/app_dev.php/api/professor/subjects/{professorId}
+
+## Fazer Chamada
+POST http://<hostname or Ip>/app_dev.php/api/students/fouls
+
+## Obter Lista de Materias (Alunos) e de Professores com que tem aula
+GET http://<hostname or Ip>/app_dev.php/api/professor/{studentId}
+
+## Obter Lista de Presença
+GET http://<hostname or Ip>/app_dev.php/api/students/fouls/{studentId}
