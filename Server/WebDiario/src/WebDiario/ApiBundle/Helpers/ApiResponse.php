@@ -39,6 +39,9 @@ class ApiResponse
         $this->response = new Response();
         $this->response->setStatusCode($this->statusCode);
         $this->response->headers->set('Content-Type', "application/json; charset=utf-8");
+        $this->response->headers->set('Access-control-allow-headers', "accept, content-type, origin, x-requested-with");
+        $this->response->headers->set('Access-control-allow-origin', "*");
+        $this->response->headers->set('Content-Encoding',"json");
     }
 
     public static function createApiResponseByCode($code)
