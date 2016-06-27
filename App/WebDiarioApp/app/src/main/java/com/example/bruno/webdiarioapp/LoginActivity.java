@@ -11,12 +11,14 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,9 +32,11 @@ public class LoginActivity extends AppCompatActivity {
     Spinner spinnerEscolhaTipo;
     String escolhaDoSpinner;
     JSONTask jsonTask;
-    String json;
+    String JSONConsultaBanco;
+    String retornoJSON;
     EditText editTextSenha;
     EditText editTextProntuario;
+    JSONArray jsonArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,13 +60,13 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void carregarMenu(View view) {
-        // fazerConexao();
+        fazerConexao();
+        testandoJSON();
         if (escolhaDoSpinner.equals("Professor")) {
             carregarMenu = new Intent(this, MenuProfessorActivity.class);
         } else {
             carregarMenu = new Intent(this, MenuAlunoActivity.class);
         }
-
         startActivity(carregarMenu);
     }
 
@@ -95,29 +99,46 @@ public class LoginActivity extends AppCompatActivity {
 
     private void fazerConexao() {
         try {
-            jsonTask.execute("http://192.168.0.102/app_dev.php/api/login").get();
+            // jsonTask.execute("http://192.168.0.102/app.php/api/login").get();
+            retornoJSON = jsonTask.execute("http://jsonplaceholder.typicode.com/posts").get();
+            jsonArray = new JSONArray(retornoJSON);
         } catch (InterruptedException e) {
-            Log.d("teste", e.toString());
+            Log.d("erro", e.toString());
         } catch (ExecutionException e) {
-            Log.d("teste", e.toString());
+            Log.d("erro", e.toString());
+        } catch (JSONException e) {
+            Log.d("erro", e.toString());
         }
     }
 
+    private void testandoJSON() {
+        for (int i = 0; i < jsonArray.length(); i++) {
+            try {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                Log.d("teste", jsonObject.getString("userId"));
+            } catch (JSONException e) {
+                Log.d("erro", e.toString());
+            }
+        }
+        Log.d("teste", jsonArray.toString());
+    }
+
     private void construindoJSON(String prontuario, String senha, String tipoLogin) {
-        json = "" +
+        JSONConsultaBanco = "" +
                 "{" +
                 "\"registry\":\"" + prontuario + "\"" +
                 "\"password\":\"" + senha + "\"" +
                 "\"login_type\":\"" + tipoLogin + "\"" +
                 "}";
-        jsonTask.setJson(json);
+        jsonTask.setJson(JSONConsultaBanco);
     }
 }
 
 class JSONTask extends AsyncTask<String, String, String> {
 
     HttpURLConnection conexao;
-    String json;
+    String JSONConsultaBanco;
+    String retornoJson;
 
     @Override
     protected String doInBackground(String... urls) {
@@ -125,35 +146,39 @@ class JSONTask extends AsyncTask<String, String, String> {
             URL url = new URL(urls[0]);
             conexao = (HttpURLConnection) url.openConnection();
             conexao.setRequestProperty("Content-Type", "application/json");
-            conexao.setDoOutput(true);
-            // conexao.setRequestProperty("Authorization", "TOTEN!");
-            conexao.setRequestMethod("POST");
+            conexao.setRequestProperty("Accept", "application/json");
+            conexao.setDoOutput(false);
+            conexao.setRequestMethod("GET");
             conexao.connect();
 
-            OutputStream outputStream = conexao.getOutputStream();
+            /*OutputStream outputStream = conexao.getOutputStream();
             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
             writer.write(json);
+            writer.flush();
             writer.close();
-            outputStream.close();
+            outputStream.close();*/
 
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conexao.getInputStream(), "UTF-8"));
-            String retorno = null;
-            StringBuilder stringBuilder = new StringBuilder();
-            String resultado = null;
+            InputStream inputStream = conexao.getInputStream();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuffer stringBuffer = new StringBuffer();
+            String cadaLinha = "";
 
-            while ((retorno = bufferedReader.readLine()) != null) {
-                stringBuilder.append(retorno);
+
+            while ((cadaLinha = bufferedReader.readLine()) != null) {
+                stringBuffer.append(cadaLinha);
             }
 
-            bufferedReader.close();
-            resultado = stringBuilder.toString();
-            Log.d("teste", "passou");
-            return resultado;
+            retornoJson = stringBuffer.toString();
+
+            Log.d("teste", retornoJson);
+            conexao.disconnect();
+            return retornoJson;
         } catch (MalformedURLException e) {
             Log.d("teste", e.toString());
         } catch (IOException e) {
             Log.d("teste", e.toString());
         }
+        conexao.disconnect();
         return null;
     }
 
@@ -162,7 +187,7 @@ class JSONTask extends AsyncTask<String, String, String> {
         super.onPostExecute(s);
     }
 
-    public void setJson(String json) {
-        this.json = json;
+    public void setJson(String JSONConsultaBanco) {
+        this.JSONConsultaBanco = JSONConsultaBanco;
     }
 }
