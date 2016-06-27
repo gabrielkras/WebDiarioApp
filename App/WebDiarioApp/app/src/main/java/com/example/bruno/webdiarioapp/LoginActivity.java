@@ -11,8 +11,10 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
@@ -54,14 +56,14 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void carregarMenu(View view) {
-        fazerConexao();
-        /*if (escolhaDoSpinner.equals("Professor")) {
+        // fazerConexao();
+        if (escolhaDoSpinner.equals("Professor")) {
             carregarMenu = new Intent(this, MenuProfessorActivity.class);
         } else {
             carregarMenu = new Intent(this, MenuAlunoActivity.class);
         }
 
-        startActivity(carregarMenu);*/
+        startActivity(carregarMenu);
     }
 
     public void sair(View view) {
@@ -134,6 +136,16 @@ class JSONTask extends AsyncTask<String, String, String> {
             writer.close();
             outputStream.close();
 
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conexao.getInputStream(), "UTF-8"));
+            String retorno = null;
+            StringBuilder stringBuilder = new StringBuilder();
+            String resultado = null;
+
+            while ((retorno = bufferedReader.readLine()) != null) {
+                stringBuilder.append(retorno);
+            }
+            bufferedReader.close();
+            resultado = stringBuilder.toString();
             Log.d("teste", "passou");
         } catch (MalformedURLException e) {
             Log.d("teste", e.toString());
