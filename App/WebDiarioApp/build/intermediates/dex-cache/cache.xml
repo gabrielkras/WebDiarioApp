@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.0"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.0.0_5c55c419bf9977bce62f65d8a1bafff8f3dfa9fd.jar" />
+    </item>
+    <item
+        jar="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.0"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.0.0_fc7d9d51bc415feaca9ffa578084a83e35b5572d.jar" />
+    </item>
+    <item
+        jar="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0_00c16c4eedd03177a4dd73b522cd471a250c4692.jar" />
+    </item>
+    <item
+        jar="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="24.0.0"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.0.0_f6cf9eccb4c8d3670b6e33702f59bd2ebea70b3a.jar" />
+    </item>
+    <item
+        jar="/home/bruno/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/24.0.0/support-annotations-24.0.0.jar"
+        jumboMode="false"
+        revision="24.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/pre-dexed/debug/support-annotations-24.0.0_87f2467b03d31ef297aa561a8fa62697f4285177.jar" />
+    </item>
+    <item
+        jar="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar"
+        jumboMode="false"
+        revision="24.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/pre-dexed/debug/internal_impl-24.0.0_b087e1afc20633a1140da2f39c52fed1b75007f0.jar" />
+    </item>
+
+</items>
