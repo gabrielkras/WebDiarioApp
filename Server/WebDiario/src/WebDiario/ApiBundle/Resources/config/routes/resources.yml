@@ -11,8 +11,13 @@ api_logout:
 
 #Students Resource
 api_student_list_all:
-    path:     /alunos
+    path:     /students/{id}
     defaults: { _controller: api.controller.students:listAllStudents }
+    methods: [GET]
+
+api_student_list_subjects:
+    path:     /students/subjects/{id}
+    defaults: { _controller: api.controller.students:listSubjectsByStudent}
     methods: [GET]
 
 #Professors Resource
@@ -24,4 +29,15 @@ api_professor_list_subjects:
 api_professor_listall:
     path:     /professors/{id}
     defaults: { _controller: api.controller.professors:listProfessors}
+    methods: [GET]
+
+#Fouls
+api_fouls:
+    path:     /students/fouls
+    defaults: { _controller: api.controller.students:createFouls}
+    methods: [POST]
+
+api_fouls_list:
+    path:     /students/fouls/{id}
+    defaults: { _controller: api.controller.students:listFouls}
     methods: [GET]

@@ -46,9 +46,9 @@ Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
 
 ###################################################
 
-## Obter Lista de Materias (Professor)
+## Obter Lista de Materias (Professor) e Lista de Alunos Matriculados
 
-GET http://<hostname or Ip>/app_dev.php/api/professor/subjects/{id}
+GET http://<hostname or Ip>/app_dev.php/api/professor/subjects/{professorId}
 (header)
 Content-Type: application/json
 Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
@@ -58,79 +58,38 @@ Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
   "type": "ok",
   "title": "Operacao realizada com sucesso!",
   "statusCode": 200,
-  "message": "Listagem de Materias realizada com sucesso!",
+  "message": "Listagem de Materias Realizada com sucesso!",
   "extraInformation": {
     "subjects": [
-	{
-	    "name": "Eletiva II",
-	    "abbreviation": "ELTII",
-	    "classrooms": [
-		{
-		   "classrom_id": 1,
-		   "year": 2016,
-	    	   "semester": 1,
-	    	   "enabled": 1,
-		   "course": {
-			"name": "Tecnologia em Analise e..."
-			"abbreviation": "TADS",
-			"code":"12345678",
-			"time_code":"Noturno"
-	    	   }
-	    	   "professor": {
-			"name": "Zeka da Silva",
-			"regstry": "123456",
-			"status_code": 0,
-            	   }
-	    	   "students": [
-			{
-				"name": "Gabriel Sousa Kraszczuk",
-				"registry": "135025-1",
-				"status_code": 0,
-				"id": 1,
-			}
-			{	
-				"name": "Bruno Belotti",
-				"registry": "135020-x",
-				"status_code": 0,
-				"id": 2,
-			}
-	    	   ]
-	        }
-	    ] 
-	}
+      {
+        "name": "Tópicos Especiais",
+        "abbreviation": "TPE6",
+        "subjectId": 6,
+        "course": {
+          "name": "Tecnologia em Análise e Desenvolvimento de Sistemas",
+          "abbreviation": "TADS",
+          "code": "CMP-TADS",
+          "timeCode": 2
+        },
+        "professor": {
+          "name": "Tiago Carvalho",
+          "registry": "tiago"
+        },
+        "students": [
+          {
+            "name": "Gabriel Sousa Kraszczuk",
+            "registry": "135025-1",
+            "studentId": 1
+          },
+          {
+            "name": "Bruno Belotti",
+            "registry": "135020-x",
+            "studentId": 2
+          }
+        ]
+      }
     ]
   }
-}
-
-###################################################
-## Obter Lista de Alunos em que ele da aula
-
-GET http://<hostname or Ip>/app_dev.php/api/students/{professorId}
-(header)
-Content-Type: application/json
-Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
-
----------
-{
-  "type": "ok",
-  "title": "Operacao realizada com sucesso!",
-  "statusCode": 200,
-  "message": "Listagem de Alunos realizada com sucesso!",
-  "extraInformation": {
-	"students": [
-		{
-			"name": "Gabriel Sousa Kraszczuk",
-			"registry": "135025-1",
-			"status_code": 0,
-			"id": 1,
-		}
-		{
-			"name": "Bruno Belotti",
-			"registry": "135020-x",
-			"status_code": 0,
-			"id": 2,
-		}
-	]
 }
 
 ###################################################
@@ -161,73 +120,50 @@ Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
 ---------
 {
   "type": "created",
-  "title": "Operacao realizada com sucesso!",
+  "title": "Recurso criado com sucesso!",
   "statusCode": 201,
-  "message": "Faltas marcadas com sucesso!",
-  "extraInformation": {
-	"students": [
-		{
-			"name": "Gabriel Sousa Kraszczuk",
-			"registry": "135025-1",
-			"status_code": 0,
-			"fouls": {
-				"subject": {
-					"name": "Eletiva II",
-	    				"abbreviation": "ELTII",
-				},
-				"quantity": 4,
-				"date":"2016-12-24"
-			}
-		}
-	]
-}
-
-###################################################
-
-## Obter Lista de Materias (Alunos)
-
-GET http://<hostname or Ip>/app_dev.php/api/subjects/students/{id}
-(header)
-Content-Type: application/json
-Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
-
----------
-{
-  "type": "ok",
-  "title": "Operacao realizada com sucesso!",
-  "statusCode": 200,
-  "message": "Listagem de Materias realizada com sucesso!",
+  "message": "As faltas foram aplicadas com sucesso",
   "extraInformation": {
     "subjects": [
-	{
-	    "name": "Eletiva II",
-	    "abbreviation": "ELTII",
-	    "classrooms": { 
-		{
-		   "classrom_id": 1,
-		   "year": 2016,
-	    	   "semester": 1,
-	    	   "enabled": 1,
-		   "course": {
-			"name": "Tecnologia em Analise e..."
-			"abbreviation": "TADS",
-			"code":"12345678",
-			"time_code":"Noturno"
-	    	   }
-	    	   "professor": {
-			"name": "Zeka da Silva",
-			"regstry": "123456",
-			"status_code": 0,
-            	   }
-	        }
-	    } 
-	}
+      {
+        "name": "Gabriel Sousa Kraszczuk",
+        "registry": "135025-1",
+        "fouls": {
+          "subject": {
+            "name": "Desenvolvimento de Sistemas Web",
+            "abbreviation": "DSW6"
+          },
+          "quantity": 4,
+          "date": {
+            "date": "2016-09-12 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "America/Sao_Paulo"
+          }
+        }
+      },
+      {
+        "name": "Bruno Belotti",
+        "registry": "135020-x",
+        "fouls": {
+          "subject": {
+            "name": "Desenvolvimento de Sistemas Web",
+            "abbreviation": "DSW6"
+          },
+          "quantity": 4,
+          "date": {
+            "date": "2016-09-12 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "America/Sao_Paulo"
+          }
+        }
+      }
     ]
   }
 }
 
 ###################################################
-## Obter Lista de Professores em que o aluno tem aula
+
+## Obter Lista de Materias (Alunos) e de Professores com que tem aula
 
 GET http://<hostname or Ip>/app_dev.php/api/professor/{studentId}
 (header)
@@ -270,38 +206,44 @@ Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
 ###################################################
 ## Obter Lista de Presença
 
-GET http://<hostname or Ip>/app_dev.php/api/fouls/{studentId}
+GET http://<hostname or Ip>/app_dev.php/api/students/fouls/{studentId}
 (header)
 Content-Type: application/json
 Authorization TOKEN56FRSE17739H97U9WU4HD702N3U
 
 ---------
 {
-  "type": "ok",
-  "title": "Operacao realizada com sucesso!",
-  "statusCode": 200,
-  "message": "Listagem de Alunos realizada com sucesso!",
+  "type": "created",
+  "title": "Recurso criado com sucesso!",
+  "statusCode": 201,
+  "message": "As faltas foram aplicadas com sucesso",
   "extraInformation": {
-	"fouls": [
-		"subject": {
-			"name": "Eletiva II",
-	    		"abbreviation": "ELTII",
-			"totalFouls": [
-				{
-					"quantity": 4,
-					"date":"2016-03-16"
-				}
-				{
-					"quantity": 2,
-					"date":"2016-03-26"
-				}
-				{
-					"quantity": 4,
-					"date":"2016-03-30"
-				}
-			]
-		}
-	]
+    "fouls": [
+      {
+        "subject": {
+          "name": "Desenvolvimento de Sistemas Web",
+          "abbreviation": "Desenvolvimento de Sistemas Web",
+          "classroom": {
+            "classroom_id": 1,
+            "year": 2016,
+            "semester": 0
+          },
+          "professor": {
+            "name": "Andre Valenti",
+            "registry": "andre"
+          },
+          "foul": {
+            "quantity": 4,
+            "date": {
+              "date": "2016-09-12 00:00:00.000000",
+              "timezone_type": 3,
+              "timezone": "America/Sao_Paulo"
+            }
+          }
+        }
+      }
+    ]
+  }
 }
 
 
