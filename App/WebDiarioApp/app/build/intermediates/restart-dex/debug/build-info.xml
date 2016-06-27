@@ -4,22 +4,28 @@
     api-level="21"
     density="xxxhdpi"
     format="7"
-    timestamp="35837075190863"
+    timestamp="36310897633855"
     token="-1926371203482803019" >
 
     <task
         name="javac"
-        duration="984" />
+        duration="358" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="48" />
+        duration="52" />
     <task
         name="verifier"
-        duration="13" />
+        duration="68" />
 
+    <artifact
+        location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/resources-debug.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+        type="DEX" />
     <artifact
         location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
         type="DEX" />
@@ -30,9 +36,6 @@
             type="MAIN" />
     </build>
     <build timestamp="34636567402335" >
-        <artifact
-            location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/resources-debug.ap_"
-            type="RESOURCES" />
         <artifact
             location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_1/classes.dex"
             type="DEX" />
@@ -50,9 +53,6 @@
             type="DEX" />
         <artifact
             location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
-            type="DEX" />
-        <artifact
-            location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
             type="DEX" />
         <artifact
             location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex"
@@ -85,7 +85,13 @@
             location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.0.0_00c16c4eedd03177a4dd73b522cd471a250c4692/classes.dex"
             type="DEX" />
     </build>
-    <build timestamp="35837075190863" >
+    <build timestamp="36310897633855" >
+        <artifact
+            location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/resources-debug.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_4/classes.dex"
+            type="DEX" />
         <artifact
             location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
             type="DEX" />

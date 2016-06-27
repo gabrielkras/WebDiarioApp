@@ -4,12 +4,16 @@
         "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
+        "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
         "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/chamada.png",
         "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/src/main/res/drawable/chamada.png"
     },
     {
-        "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
-        "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.0.0/res/drawable/abc_item_background_holo_light.xml"
+        "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/webdiariologo.png",
+        "source": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/src/main/res/drawable/webdiariologo.png"
     },
     {
         "merged": "/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",

@@ -483,11 +483,12 @@ int drawable alunos 0x7f02004c
 int drawable chamada 0x7f02004d
 int drawable logotipo 0x7f02004e
 int drawable materias 0x7f02004f
-int drawable notification_template_icon_bg 0x7f020054
+int drawable notification_template_icon_bg 0x7f020055
 int drawable presenca 0x7f020050
 int drawable professor 0x7f020051
 int drawable sair 0x7f020052
 int drawable webdiario 0x7f020053
+int drawable webdiariologo 0x7f020054
 int id action0 0x7f0b006d
 int id action_bar 0x7f0b0045
 int id action_bar_activity_content 0x7f0b0000

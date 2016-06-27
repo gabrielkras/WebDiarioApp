@@ -1774,11 +1774,12 @@ containing a value of this type.
         public static final int chamada=0x7f02004d;
         public static final int logotipo=0x7f02004e;
         public static final int materias=0x7f02004f;
-        public static final int notification_template_icon_bg=0x7f020054;
+        public static final int notification_template_icon_bg=0x7f020055;
         public static final int presenca=0x7f020050;
         public static final int professor=0x7f020051;
         public static final int sair=0x7f020052;
         public static final int webdiario=0x7f020053;
+        public static final int webdiariologo=0x7f020054;
     }
     public static final class id {
         public static final int action0=0x7f0b006d;

@@ -19,7 +19,7 @@
         android:layout_alignRight="@+id/editProntuarioUsuario"
         android:layout_alignStart="@+id/editProntuarioUsuario"
         android:contentDescription="@string/contentDescriptionLogoApp"
-        android:src="@drawable/logotipo" />
+        android:src="@drawable/webdiariologo" />
 
     <EditText
         android:id="@+id/editProntuarioUsuario"

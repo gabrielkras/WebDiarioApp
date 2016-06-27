@@ -144,9 +144,11 @@ class JSONTask extends AsyncTask<String, String, String> {
             while ((retorno = bufferedReader.readLine()) != null) {
                 stringBuilder.append(retorno);
             }
+
             bufferedReader.close();
             resultado = stringBuilder.toString();
             Log.d("teste", "passou");
+            return resultado;
         } catch (MalformedURLException e) {
             Log.d("teste", e.toString());
         } catch (IOException e) {
