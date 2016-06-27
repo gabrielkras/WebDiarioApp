@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<instant-run
+    abi="armeabi-v7a,armeabi"
+    api-level="21"
+    density="xxxhdpi"
+    format="7"
+    timestamp="34408765509372"
+    token="-1926371203482803019" >
+
+    <task
+        name="javac"
+        duration="0" />
+    <task
+        name="instant-run-dex"
+        duration="0" />
+    <task
+        name="instant-run-transform"
+        duration="0" />
+    <task
+        name="verifier"
+        duration="0" />
+
+    <build timestamp="31820750384456" >
+        <artifact
+            location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/outputs/apk/app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="34108834123696"
+        verifier="METHOD_DELETED" >
+        <artifact
+            location="/home/bruno/AndroidStudioProjects/WebDiarioApp/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_0/classes.dex"
+            type="DEX" />
+    </build>
+    <build timestamp="34408765509372" />
+
+</instant-run>
