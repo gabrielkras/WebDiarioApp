@@ -4,18 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class ListaMateriasActivity extends AppCompatActivity {
 
@@ -36,6 +31,22 @@ public class ListaMateriasActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         listaMaterias.setAdapter(adapter);
+        listaMaterias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent detalheMateria = new Intent(ListaMateriasActivity.this, MateriaDetalheActivity.class);
+                TextView textViewNomeMateria = (TextView) view.findViewById(R.id.textViewNomeMateria);
+                TextView textViewSiglaMateria = (TextView) view.findViewById(R.id.textViewSiglaMateria);
+                Bundle bundle = new Bundle();
+                bundle.putString("nomeMateria", textViewNomeMateria.getText().toString());
+                bundle.putString("siglaMateria", textViewSiglaMateria.getText().toString());
+                bundle.putString("descricao1", "Descrição 1");
+                bundle.putString("descricao2", "Descrição 2");
+                detalheMateria.putExtras(bundle);
+                startActivity(detalheMateria);
+            }
+        });
+
     }
 
     private void instanciarObjetos() {

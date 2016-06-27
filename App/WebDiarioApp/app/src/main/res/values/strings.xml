@@ -1,8 +1,9 @@
 <resources>
     <string name="app_name">WebDiarioApp</string>
-    <string name="nomeUsuario">Nome</string>
+    <string name="prontuarioUsuario">Prontuário</string>
     <string name="btnLogin">Entrar</string>
     <string name="btnSair">Sair</string>
+    <string name="senhaUsuario">Senha</string>
     <string name="contentDescriptionLogoApp">Logo do Sistema</string>
     <string name="contentDescriptionMaterias">Listar Matérias</string>
     <string name="contentDescriptionChamada">Fazer Chamada</string>

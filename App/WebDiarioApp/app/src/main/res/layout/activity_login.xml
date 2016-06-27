@@ -13,43 +13,54 @@
         android:id="@+id/logoWebDiario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editProntuarioUsuario"
+        android:layout_alignLeft="@+id/editProntuarioUsuario"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
+        android:layout_alignRight="@+id/editProntuarioUsuario"
+        android:layout_alignStart="@+id/editProntuarioUsuario"
         android:contentDescription="@string/contentDescriptionLogoApp"
-        android:src="@drawable/webdiario" />
+        android:src="@drawable/logotipo" />
 
     <EditText
-        android:id="@+id/editUserName"
+        android:id="@+id/editProntuarioUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/editSenhaUsuario"
+        android:layout_alignLeft="@+id/editSenhaUsuario"
+        android:layout_alignRight="@+id/editSenhaUsuario"
+        android:layout_alignStart="@+id/editSenhaUsuario"
         android:layout_below="@+id/logoWebDiario"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="52dp"
         android:ems="15"
-        android:inputType="textPersonName"
-        android:text="@string/nomeUsuario" />
+        android:hint="@string/prontuarioUsuario"
+        android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/editUserPassWord"
+        android:id="@+id/editSenhaUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editUserName"
-        android:layout_centerHorizontal="true"
+        android:layout_alignEnd="@+id/spinnerEscolhaTipo"
+        android:layout_alignLeft="@+id/spinnerEscolhaTipo"
+        android:layout_alignRight="@+id/spinnerEscolhaTipo"
+        android:layout_alignStart="@+id/spinnerEscolhaTipo"
+        android:layout_below="@+id/editProntuarioUsuario"
         android:layout_marginTop="40dp"
         android:ems="15"
+        android:hint="@string/senhaUsuario"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editUserPassWord"
+        android:layout_below="@+id/editSenhaUsuario"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="68dp"
+        android:background="@color/verde"
         android:ems="20"
         android:onClick="carregarMenu"
-        android:text="@string/btnLogin" />
+        android:text="@string/btnLogin"
+        android:textColor="@color/verde_claro" />
 
     <Button
         android:id="@+id/buttonExit"
@@ -58,7 +69,20 @@
         android:layout_below="@+id/buttonLogin"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
+        android:background="@color/verde"
         android:ems="20"
         android:onClick="sair"
-        android:text="@string/btnSair" />
+        android:text="@string/btnSair"
+        android:textColor="@color/verde_claro" />
+
+    <Spinner
+        android:id="@+id/spinnerEscolhaTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/buttonLogin"
+        android:layout_alignLeft="@+id/buttonLogin"
+        android:layout_alignRight="@+id/buttonLogin"
+        android:layout_alignStart="@+id/buttonLogin"
+        android:layout_below="@+id/editSenhaUsuario"
+        android:spinnerMode="dropdown" />
 </RelativeLayout>
